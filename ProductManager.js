@@ -1,4 +1,4 @@
-const fs = require("fs");
+import fs from "fs";
 
 /**
  * Clase ProductManager
@@ -11,7 +11,7 @@ const fs = require("fs");
  * *updateProduct - Actualiza el objeto con los datos de otro objeto
  * *deleteProduct - Borrar el objeto según su Id
  */
-class ProductManager {
+export default class ProductManager {
   /**
    * Constructor que inicializa el arreglo vacío y el path del json
    */
@@ -208,8 +208,7 @@ class ProductManager {
 
 //Los tests que utilicé para probar el código, descomentar si se quieren reutilizar.
 
-/* const productM = new ProductManager();
-console.log(productM.getProducts());
+const productM = new ProductManager();
 const product1 = {
   title: "Mi producto 1",
   description: "Descripcion",
@@ -218,7 +217,6 @@ const product1 = {
   code: "abc",
   stock: 5,
 };
-productM.addProduct(product1);
 
 const product2 = {
   title: "Mi producto 2",
@@ -229,8 +227,6 @@ const product2 = {
   stock: 3,
 };
 
-productM.addProduct(product2);
-
 const product3 = {
   title: "Mi producto 3",
   description: "Descripcion",
@@ -240,9 +236,11 @@ const product3 = {
   stock: 10,
 };
 
-productM.addProduct(product3);
+/* productM.addProduct(product1);
+productM.addProduct(product2);
+productM.addProduct(product3); */
 
-product3.title = "Este es el nuevo titulo del producto";
+/* product3.title = "Este es el nuevo titulo del producto";
 productM.updateProduct(3, product3);
 
 console.log("Los productos son:", productM.getProducts());
@@ -251,7 +249,7 @@ console.log("****Product by id******");
 console.log(productM.getProductById(2));
 console.log(productM.getProductById(5));
 
-******* DELETE PRODCUT ********
+//******* DELETE PRODCUT ********
 
 productM.deleteProduct(2);
 
